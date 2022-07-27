@@ -1,27 +1,20 @@
 export type variantT = "block" | "text";
 
-export interface SkeletonPropsI {
-  variant: variantT;
-  color?: string;
-  borderRadius?: string;
-  width?: string;
-  height?: string;
-  animate?: boolean;
-}
-
-export interface FallbackPropsI {
-  variant: variantT;
+export type BaseSkeletonPropsT = {
   color: string;
   borderRadius: string;
   width: string;
   height: string;
   animate: boolean;
-}
+};
 
-export interface BlockPropsI {
-  color: string;
-  borderRadius: string;
-  width: string;
-  height: string;
-  animate: boolean;
-}
+export type BlockPropsT = {} & BaseSkeletonPropsT;
+export type TextPropsT = {
+  lines: number;
+} & BaseSkeletonPropsT;
+
+export type SkeletonPropsT =
+  | ({ variant: "block" } & Partial<BlockPropsT>)
+  | ({ variant: "text" } & Partial<TextPropsT>);
+
+export type FallbackPropsT = BlockPropsT | TextPropsT;

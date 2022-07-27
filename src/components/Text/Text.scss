@@ -1,0 +1,19 @@
+@import "../styles/animation.scss";
+
+.text {
+  $root: &;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__line {
+    width: 100%;
+    height: 16px;
+  }
+
+  &--animate {
+    #{$root}__line {
+      animation: $animationWave;
+    }
+  }
+}

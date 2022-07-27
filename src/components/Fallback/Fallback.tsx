@@ -1,14 +1,28 @@
 import { FunctionalComponent } from "vue";
-import { FallbackPropsI } from "../../types";
+import type { SkeletonPropsT, FallbackPropsT } from "../../types";
 import Block from "../Block/Block";
+import Text from "../Text/Text";
 
-const Fallback: FunctionalComponent<FallbackPropsI> = ({
-  variant,
-  ...props
-}) => {
-  switch (variant) {
+const Fallback: FunctionalComponent<SkeletonPropsT> = (props) => {
+  let fallBackProps: FallbackPropsT = {
+    color: "#f5f5f5",
+    animate: false,
+    width: "200px",
+    height: "200px",
+    borderRadius: "0",
+  };
+
+  switch (props.variant) {
     case "block":
-      return <Block {...props}></Block>;
+      fallBackProps = { ...fallBackProps, ...props };
+      return <Block {...fallBackProps} />;
+    case "text":
+      fallBackProps = {
+        ...fallBackProps,
+        ...props,
+        lines: props.lines || 1,
+      };
+      return <Text {...fallBackProps} />;
   }
 };
 

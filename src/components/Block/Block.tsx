@@ -1,11 +1,11 @@
 import { FunctionalComponent } from "vue";
 import styleInjct from "style-inject";
-import { BlockPropsI } from "../../types";
+import type { BlockPropsT } from "../../types";
 import s from "./Block.scss";
 
 styleInjct(s);
 
-const Block: FunctionalComponent<BlockPropsI> = ({
+const Block: FunctionalComponent<BlockPropsT> = ({
   color,
   width,
   height,
