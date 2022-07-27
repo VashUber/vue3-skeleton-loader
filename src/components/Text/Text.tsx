@@ -18,7 +18,7 @@ const Text: FunctionalComponent<TextPropsT> = ({
       class={["text", animate ? "text--animate" : ""].join(" ")}
       style={{ width, height, borderRadius }}
     >
-      {Array.from(new Array(lines)).map(() => (
+      {Array.from({ length: lines }).map(() => (
         <div class="text__line" style={{ background: color }}></div>
       ))}
     </div>
