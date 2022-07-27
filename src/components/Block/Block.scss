@@ -1,0 +1,7 @@
+@import "../styles/animation.scss";
+
+.block {
+  &--animate {
+    animation: $animationWave;
+  }
+}

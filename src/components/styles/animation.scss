@@ -1,0 +1,10 @@
+$animationWave: animation 1.25s linear infinite alternate;
+
+@keyframes animation {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(0.95);
+  }
+}

@@ -1,3 +1,3 @@
-import Button from "./components/Button";
+import SkeletonLoader from "./components/SkeletonLoader/SkeletonLoader";
 
-export default Button;
+export default SkeletonLoader;

@@ -26,6 +26,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.9",
     "@types/node": "^18.6.1",
+    "@types/style-inject": "^0.3.0",
     "@vitejs/plugin-vue": "^3.0.0",
     "@vitejs/plugin-vue-jsx": "^2.0.0",
     "babel-loader": "^8.2.5",
@@ -39,5 +40,8 @@
   },
   "peerDependencies": {
     "vue": "^3.2.37"
+  },
+  "dependencies": {
+    "style-inject": "^0.3.0"
   }
 }
