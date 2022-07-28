@@ -1,5 +1,5 @@
 import { FunctionalComponent, Suspense } from "vue";
-import type { SkeletonPropsT, FallbackPropsT } from "../../types";
+import type { SkeletonPropsT } from "../../types";
 import Fallback from "../Fallback/Fallback";
 
 const SkeletonLoader: FunctionalComponent<SkeletonPropsT> = (
@@ -12,7 +12,11 @@ const SkeletonLoader: FunctionalComponent<SkeletonPropsT> = (
         fallback: <Fallback {...props} />,
       }}
     >
-      <Fallback {...props} />
+      {import.meta.env.MODE !== "dev" ? (
+        <> {slots.default?.()} </>
+      ) : (
+        <Fallback {...props} />
+      )}
     </Suspense>
   );
 };
